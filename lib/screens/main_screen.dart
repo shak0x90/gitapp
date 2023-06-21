@@ -16,6 +16,14 @@ class _MainScreenState extends State<MainScreen> {
   final GitApiController controller = Get.put(GitApiController());
   final TextEditingController _userNameController = TextEditingController();
   bool isLoading = false;
+  var formKey;
+
+  @override
+  void initState() {
+    formKey = GlobalKey<FormState>();
+    super.initState();
+  }
+
   @override
   void dispose() {
     _userNameController.dispose();
@@ -58,7 +66,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final formKey = GlobalKey<FormState>();
+
     return Scaffold(
       backgroundColor: kColorPrimary,
       body: Column(
