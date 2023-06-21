@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:github_api_project/colors.dart';
 import 'package:github_api_project/utils/utils.dart';
 
 import '../controller/git_controller.dart';
@@ -24,13 +23,14 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            TextButton(
+            IconButton(
               onPressed: () {
                 isListView = !isListView;
                 setState(() {});
               },
-              child: const Text("toggle"),
+              icon: const Icon(Icons.settings),
             ),
             Expanded(
               child: Obx(
